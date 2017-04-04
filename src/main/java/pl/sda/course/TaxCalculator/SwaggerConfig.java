@@ -1,4 +1,4 @@
-
+package pl.sda.course.TaxCalculator;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,8 +19,4 @@ public class SwaggerConfig {
           .paths(PathSelectors.any())                          
           .build();                                           
     }
-}package pl.sda.course.TaxCalculator;
-
-public class SwaggerConfig {
-
 }
