@@ -2,8 +2,11 @@ package pl.sda.course.TaxCalculator;
 
 import java.time.LocalDate;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class Transaction {
 
+	 @ApiModelProperty(example= "2017-01-01")
 	private LocalDate date;
 	private String description;
 	private long cost;
