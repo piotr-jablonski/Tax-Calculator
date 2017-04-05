@@ -29,6 +29,6 @@ public class TransactionsController {
 	public String addTransaction(@RequestBody Transaction transaction){
 		boolean check = fileProcessor.add(transaction);
 		return "Dodano: " + check;
-	}
+	} 
 	
 }

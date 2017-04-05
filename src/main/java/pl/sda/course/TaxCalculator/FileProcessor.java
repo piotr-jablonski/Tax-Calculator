@@ -42,7 +42,7 @@ public class FileProcessor {
 		String strLine;
 		List<Transaction> allTransactions = new ArrayList<Transaction>();
 		BufferedReader br = null;
-		try {
+		try { 
 			fstream = new FileInputStream("records.txt");
 			br = new BufferedReader(new InputStreamReader(fstream));
 			while ((strLine = br.readLine()) != null){
