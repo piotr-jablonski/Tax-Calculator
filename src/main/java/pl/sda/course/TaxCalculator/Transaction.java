@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 import io.swagger.annotations.ApiModelProperty;
 
-public class Transaction {
+public class Transaction implements Comparable<Transaction> {
 
 	 @ApiModelProperty(example= "2017-01-01")
 	private LocalDate date;
@@ -15,6 +15,18 @@ public class Transaction {
 
 	public LocalDate getDate() {
 		return date;
+	}
+	
+	public int getYear() {
+		return date.getYear();
+	}
+	
+	public int getMonth() {
+		return date.getMonthValue();
+	}
+	
+	public int getDay() {
+		return date.getDayOfMonth();
 	}
 
 	public void setDate(LocalDate date) {
@@ -52,5 +64,22 @@ public class Transaction {
 	public void setVat(long vat) {
 		this.vat = vat;
 	}
-
+	
+	public int compareTo(Transaction trans) {
+		if(this.getYear() < trans.getYear()){
+			return -1;
+		} else if(this.getYear() > trans.getYear()){
+			return 1;
+		} else if(this.getMonth() < trans.getMonth()){
+			return -1;
+		} else if(this.getMonth() > trans.getMonth()){
+			return 1;
+		} else if(this.getDay() < trans.getDay()){
+			return -1;
+		} else if(this.getDay() > trans.getDay()){
+			return 1;
+		} else {
+			return 0;
+		}
+	}
 }
