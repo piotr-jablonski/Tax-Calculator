@@ -42,7 +42,7 @@ public class FileProcessor {
 		String strLine;
 		List<Transaction> allTransactions = new ArrayList<Transaction>();
 		BufferedReader br = null;
-		try {
+		try { 
 			fstream = new FileInputStream("records.txt");
 			br = new BufferedReader(new InputStreamReader(fstream));
 			while ((strLine = br.readLine()) != null){
@@ -69,7 +69,7 @@ public class FileProcessor {
 				int vat = Integer.valueOf(parts[4]);
 				
 				LocalDate date = null;
-				date.of(year, month, day);
+				date = LocalDate.of(year, month, day); 
 				transaction.setDate(date);
 				transaction.setDescription(description);
 				transaction.setCost(cost);
