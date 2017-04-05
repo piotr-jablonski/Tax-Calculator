@@ -1,4 +1,4 @@
-package pl.sda.course.tests;
+/*package pl.sda.course.tests;
 
 import static org.junit.Assert.fail;
 
@@ -32,9 +32,6 @@ public class FileProcessorTest {
 		
 		
 		
-	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
-
+	
 }
+*/
