@@ -69,7 +69,7 @@ public class FileProcessor {
 				int vat = Integer.valueOf(parts[4]);
 				
 				LocalDate date = null;
-				date = LocalDate.of(year, month, day);
+				date = LocalDate.of(year, month, day); 
 				transaction.setDate(date);
 				transaction.setDescription(description);
 				transaction.setCost(cost);
