@@ -1,29 +1,30 @@
 package pl.sda.course.TaxCalculator;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping(path = "/transactions")
 public class TransactionsController {
 	
 	private FileProcessor fileProcessor;
 	
-	@RequestMapping(path = "/transactions", method = { RequestMethod.GET })
-	public List<String> getTransactions() {
-
-		return Arrays.asList("hello");
+	@RequestMapping(method = { RequestMethod.GET }, produces = "application/json")
+	@ResponseBody
+	public List<Transaction> getTransactions() {
+		return fileProcessor.getAllTransactions();
 	}
 
-	@RequestMapping(path = "transactions/add", method = { RequestMethod.POST })
+	@RequestMapping(method = { RequestMethod.POST }, consumes = "application/json")
 	public String addTransaction(@RequestBody Transaction transaction){
 		fileProcessor.add(transaction);
 		
-		return "Dodano";
+		return "Dodano: " + fileProcessor.add(transaction);
 	}
 	
 }

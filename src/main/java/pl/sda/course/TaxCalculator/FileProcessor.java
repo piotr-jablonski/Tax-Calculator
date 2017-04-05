@@ -34,7 +34,7 @@ public class FileProcessor {
 		return check;
 	}
 	
-	public List<Transaction> getTransactions(){
+	public List<Transaction> getAllTransactions(){
 		FileInputStream fstream = null;
 		String strLine;
 		List<Transaction> allTransactions = new ArrayList<Transaction>();
@@ -55,14 +55,14 @@ public class FileProcessor {
 					int day = Integer.valueOf(dateParts[2]);
 				
 				String description = parts[1];
-				parts[2].replaceAll(",", "");
-				parts[2].replaceAll(".", "");
+				parts[2].replace(",", "");
+				parts[2].replace(".", "");
 				int cost = Integer.valueOf(parts[2]);
-				parts[3].replaceAll(",", "");
-				parts[3].replaceAll(".", "");
+				parts[3].replace(",", "");
+				parts[3].replace(".", "");
 				int income = Integer.valueOf(parts[3]);
-				parts[4].replaceAll(",", "");
-				parts[4].replaceAll(".", "");
+				parts[4].replace(",", "");
+				parts[4].replace(".", "");
 				int vat = Integer.valueOf(parts[4]);
 				
 				LocalDate date = null;
