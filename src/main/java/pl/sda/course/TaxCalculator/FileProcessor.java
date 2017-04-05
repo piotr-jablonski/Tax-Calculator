@@ -70,7 +70,6 @@ public class FileProcessor {
 				
 				LocalDate date = null;
 				date = LocalDate.of(year, month, day);
-				
 				transaction.setDate(date);
 				transaction.setDescription(description);
 				transaction.setCost(cost);

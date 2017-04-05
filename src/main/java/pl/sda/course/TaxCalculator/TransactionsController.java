@@ -19,7 +19,6 @@ public class TransactionsController {
 	}
 	
 	@RequestMapping(method = { RequestMethod.GET }, produces = "application/json")
-	//@ResponseBody
 	public List<Transaction> getTransactions() {
 		List<Transaction> allTransactions = fileProcessor.getAllTransactions();
 		return allTransactions;
