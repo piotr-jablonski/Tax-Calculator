@@ -2,6 +2,7 @@ package pl.sda.course.TaxCalculator;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,17 +15,21 @@ public class TransactionsController {
 	
 	private FileProcessor fileProcessor;
 	
+	public TransactionsController(@Autowired FileProcessor fileProcessor){
+		this.fileProcessor = fileProcessor;
+	}
+	
 	@RequestMapping(method = { RequestMethod.GET }, produces = "application/json")
-	@ResponseBody
+	//@ResponseBody
 	public List<Transaction> getTransactions() {
-		return fileProcessor.getAllTransactions();
+		List<Transaction> allTransactions = fileProcessor.getAllTransactions();
+		return allTransactions;
 	}
 
 	@RequestMapping(method = { RequestMethod.POST }, consumes = "application/json")
 	public String addTransaction(@RequestBody Transaction transaction){
-		fileProcessor.add(transaction);
-		
-		return "Dodano: " + fileProcessor.add(transaction);
+		boolean check = fileProcessor.add(transaction);
+		return "Dodano: " + check;
 	}
 	
 }
