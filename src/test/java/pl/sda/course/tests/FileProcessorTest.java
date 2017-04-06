@@ -1,4 +1,4 @@
-package pl.sda.course.tests;
+/*package pl.sda.course.tests;
 
 import static org.junit.Assert.fail;
 
@@ -38,3 +38,4 @@ public class FileProcessorTest {
 	}
 
 }
+*/

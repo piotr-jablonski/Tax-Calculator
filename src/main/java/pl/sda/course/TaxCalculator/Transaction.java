@@ -17,15 +17,15 @@ public class Transaction implements Comparable<Transaction> {
 		return date;
 	}
 	
-	public int getYear() {
+	private int getYear() {
 		return date.getYear();
 	}
 	
-	public int getMonth() {
+	private int getMonth() {
 		return date.getMonthValue();
 	}
 	
-	public int getDay() {
+	private int getDay() {
 		return date.getDayOfMonth();
 	}
 
